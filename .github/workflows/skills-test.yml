@@ -1,0 +1,33 @@
+name: Skills Tests
+
+on:
+  push:
+    paths:
+      - 'skills/scripts/**'
+      - '.github/workflows/skills-test.yml'
+  pull_request:
+    paths:
+      - 'skills/scripts/**'
+      - '.github/workflows/skills-test.yml'
+  workflow_dispatch:
+
+jobs:
+  test-skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install test dependencies
+        working-directory: skills/scripts
+        run: pip install pytest hypothesis
+
+      - name: Run tests
+        working-directory: skills/scripts
+        run: pytest tests/ -v
+        env:
+          PYTHONPATH: .
