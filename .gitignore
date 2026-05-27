@@ -20,6 +20,7 @@
 # Track root files
 !README.md
 !LICENSE
+!settings.json
 !.gitignore
 
 # Always ignore these, even in tracked directories

@@ -29,7 +29,13 @@ find_local() {
 
 run() {
   # Run quietly with a hard time cap so a slow formatter can't stall Claude.
-  timeout 10 "$@" >/dev/null 2>&1 || true
+  if command -v timeout >/dev/null 2>&1; then
+    timeout 10 "$@" >/dev/null 2>&1 || true
+  elif command -v gtimeout >/dev/null 2>&1; then
+    gtimeout 10 "$@" >/dev/null 2>&1 || true
+  else
+    "$@" >/dev/null 2>&1 || true
+  fi
 }
 
 case "$ext" in

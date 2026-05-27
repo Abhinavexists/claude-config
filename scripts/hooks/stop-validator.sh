@@ -18,7 +18,17 @@ verify="$cwd/.claude/verify.sh"
 [[ ! -x "$verify" ]] && exit 0
 
 # Run with hard timeout so a hung check can't trap Claude forever.
-if output=$(timeout 60 "$verify" 2>&1); then
+run_verify() {
+  if command -v timeout >/dev/null 2>&1; then
+    timeout 60 "$verify"
+  elif command -v gtimeout >/dev/null 2>&1; then
+    gtimeout 60 "$verify"
+  else
+    "$verify"
+  fi
+}
+
+if output=$(run_verify 2>&1); then
   exit 0
 fi
 

@@ -20,7 +20,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "/Users/mylo/.claude/scripts/statusline.sh",
+    "command": "bash -lc 'exec \"$HOME/.claude/scripts/statusline.sh\"'",
     "padding": 0
   },
   "permissions": {
@@ -116,7 +116,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/mylo/.claude/scripts/hooks/format-on-edit.sh",
+            "command": "bash -lc 'exec \"$HOME/.claude/scripts/hooks/format-on-edit.sh\"'",
             "timeout": 15
           }
         ]
@@ -127,7 +127,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/mylo/.claude/scripts/hooks/stop-validator.sh",
+            "command": "bash -lc 'exec \"$HOME/.claude/scripts/hooks/stop-validator.sh\"'",
             "timeout": 90
           }
         ]
