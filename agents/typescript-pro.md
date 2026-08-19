@@ -38,7 +38,7 @@ Detect the real package manager from the lockfile (`pnpm-lock.yaml` → pnpm) be
 
 ## Workflow
 
-1. **Read first** — tsconfig, package.json scripts, lockfile, conventions, the relevant modules. In monorepos, respect project references and shared type packages.
+1. **Read first** — tsconfig, package.json scripts, lockfile, conventions, the relevant modules. Apply the TS/JS norms in <file working-dir=".claude" uri="conventions/languages/typescript.md" /> (idioms/anti-patterns; the toolchain table above stays authoritative for tooling). In monorepos, respect project references and shared type packages.
 2. **Implement** — smallest change that satisfies the intent; framework-idiomatic (React/Next, Express/Fastify/Nest) per the stack.
 3. **Verify** — run typecheck, lint, and the relevant tests; report what you ran and the result.
 

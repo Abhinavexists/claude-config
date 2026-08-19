@@ -150,3 +150,18 @@ These are Tier 3 defaults. User confirmation (Tier 1) overrides.
 
 Severity: TESTING_STRATEGY_VIOLATION (SHOULD) if contradicted without override.
 </default-conventions>
+
+---
+
+## Language-Specific Idioms
+
+Per-language idiom conventions live in `languages/<lang>.md` (`python`, `typescript`,
+`rust`). Select the doc by the file's language (extension). They are Tier-3 defaults —
+project docs and explicit user instruction override them.
+
+<default-conventions domain="language-idioms">
+**Language Idiom Violation**: Code that ignores an idiom or anti-pattern documented in `languages/<lang>.md` for that file's language
+Severity: SHOULD (COULD where the entry says so)
+Reported as: CONVENTION_VIOLATION
+Exception: Project docs permit the pattern, or the file's language has no `languages/` doc
+</default-conventions>

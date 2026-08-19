@@ -6,20 +6,13 @@ argument-hint: "[optional path/scope]"
 Follow this prompt directly — do not hand off to another skill (e.g. `refactor`,
 `simplify`) or its script orchestration.
 
-Improve the code for readability, maintainability, and developer ergonomics. Not
-shorter or cleverer — easier for another experienced developer to read, modify,
-debug, and extend. Prefer clarity over cleverness.
+Improve the code for readability, maintainability, and developer ergonomics. Not shorter or cleverer — easier for another experienced developer to read, modify, debug, and extend. Prefer clarity over cleverness.
 
-Scope: if arguments are given, restrict to `$ARGUMENTS`; otherwise the whole
-repository — source, tests, utilities, scripts, config, examples, project-owned
-code only. Skip generated/vendored/dependency/build/cache/third-party code.
-Enumerate the file list up front with `git ls-files` (respecting the scope) and
-work through it in explicit batches, reporting reviewed-vs-total counts; don't
-sample silently. Apply the same standard everywhere.
+Scope: if arguments are given, restrict to `$ARGUMENTS`; otherwise the whole repository — source, tests, utilities, scripts, config, examples, project-owned code only. Skip generated/vendored/dependency/build/cache/third-party code. Enumerate the file list up front with `git ls-files` (respecting the scope) and work through it in explicit batches, reporting reviewed-vs-total counts; don't sample silently. Apply the same standard everywhere.
 
-Change something only when it concretely improves one or more of: readability,
-maintainability, correctness clarity, debuggability, ergonomics, consistency, or
-reduced complexity. Do not refactor for personal style or stylistic churn.
+Change something only when it concretely improves one or more of: readability,maintainability, correctness clarity, debuggability, ergonomics, consistency, or reduced complexity. Do not refactor for personal style or stylistic churn.
+
+For `.py`/`.ts`/`.js`/`.rs` files, also apply the language idioms in `~/.claude/conventions/languages/<lang>.md` (e.g. Pythonic constructs and exception handling; TS type-narrowing and no floating promises; Rust `Result`/`?` over `unwrap` and iterator adapters) — reference only; this stays a self-contained pass.
 
 Improve:
 - Naming: replace vague/abbreviated/misleading/over-generic names with
@@ -52,18 +45,8 @@ Improve:
   vars/conversions, and magic values — only once you've established they're
   genuinely unnecessary.
 
-Tests are production code: improve names, structure, setup/teardown, duplicated
-logic, unclear assertions, and confusing fixtures so each reads as "given X, when
-Y, expect Z." Never weaken or drop coverage to shorten tests.
+Tests are production code: improve names, structure, setup/teardown, duplicated logic, unclear assertions, and confusing fixtures so each reads as "given X, when Y, expect Z." Never weaken or drop coverage to shorten tests.
 
-Preserve behavior and contracts: no changes to public APIs, external behavior,
-business logic, data formats, config contracts, persistence, or concurrency
-semantics; no perf-sensitive changes without strong justification; no new
-framework/dependency/pattern for style alone.
+Preserve behavior and contracts: no changes to public APIs, external behavior, business logic, data formats, config contracts, persistence, or concurrency semantics; no perf-sensitive changes without strong justification; no new framework/dependency/pattern for style alone.
 
-Before finishing verify: every eligible file reviewed; public APIs and external
-contracts intact; behavior unchanged; result is genuinely more readable (not just
-different); no new inconsistencies or needless abstraction introduced. Then give a
-short summary: files reviewed, major readability wins, significant refactors,
-complexity removed, naming/structure improvements, and confirmation that behavior
-and external APIs were preserved.
+Before finishing verify: every eligible file reviewed; public APIs and external contracts intact; behavior unchanged; result is genuinely more readable (not just different); no new inconsistencies or needless abstraction introduced. Then give a short summary: files reviewed, major readability wins, significant refactors, complexity removed, naming/structure improvements, and confirmation that behavior and external APIs were preserved.

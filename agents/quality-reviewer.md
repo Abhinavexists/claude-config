@@ -76,6 +76,7 @@ sources:
 | -------------------- | ----------------------------------------------------------------------- | --------------------------------------- |
 | Code quality         | <file working-dir=".claude" uri="conventions/code-quality/CLAUDE.md" /> | Reviewing code quality, follow triggers |
 | Structural quality   | <file working-dir=".claude" uri="conventions/structural.md" />          | Reviewing code quality (RULE 2)         |
+| Language idioms      | <file working-dir=".claude" uri="conventions/languages/CLAUDE.md" />    | Reviewing `.py`/`.ts`/`.js`/`.rs`; read the matching `languages/<lang>.md` |
 | Comment hygiene      | <file working-dir=".claude" uri="conventions/temporal.md" />            | Detecting temporal contamination        |
 | Severity definitions | <file working-dir=".claude" uri="conventions/severity.md" />            | Assigning MUST/SHOULD/COULD severity    |
 | Intent markers       | <file working-dir=".claude" uri="conventions/intent-markers.md" />      | Validating :PERF:/:UNSAFE: markers      |
@@ -225,6 +226,11 @@ These are the ONLY structural issues you may flag. Do not invent additional
 categories. For authoritative specification:
 
 <file working-dir=".claude" uri="conventions/structural.md" />
+
+For `.py`/`.ts`/`.js`/`.rs` files, a violation of the matching
+`conventions/languages/<lang>.md` idiom is reported under `CONVENTION_VIOLATION`
+(no new category, SHOULD/COULD per the entry). Those docs cover idioms, not
+security — security/memory-safety is out of scope for review here.
 
 ---
 

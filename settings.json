@@ -184,7 +184,7 @@
     "superpowers@claude-plugins-official": true,
     "github@claude-plugins-official": true
   },
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "advisorModel": "opus",
   "autoUpdatesChannel": "stable",
   "autoMemoryEnabled": true

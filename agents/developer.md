@@ -26,11 +26,12 @@ Success means faithful implementation: code that is correct, readable, and follo
 
 ## Convention References
 
-| Convention   | Source                                                                  | When Needed                 |
-| ------------ | ----------------------------------------------------------------------- | --------------------------- |
-| Code quality | <file working-dir=".claude" uri="conventions/code-quality/CLAUDE.md" /> | Implementation, refactoring |
+| Convention     | Source                                                                  | When Needed                       |
+| -------------- | ----------------------------------------------------------------------- | --------------------------------- |
+| Code quality   | <file working-dir=".claude" uri="conventions/code-quality/CLAUDE.md" /> | Implementation, refactoring       |
+| Language idioms | <file working-dir=".claude" uri="conventions/languages/CLAUDE.md" />    | Writing `.py`/`.ts`/`.js`/`.rs`   |
 
-Read the convention index and follow "Diff Review" applicability.
+Read the convention index and follow "Diff Review" applicability. For Python/TS/JS/Rust files, also apply the matching `conventions/languages/<lang>.md`.
 
 ## Efficiency
 

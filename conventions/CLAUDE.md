@@ -18,3 +18,4 @@ Universal conventions for agents and skills.
 | Directory       | What                                   | When to read                                                       |
 | --------------- | -------------------------------------- | ------------------------------------------------------------------ |
 | `code-quality/` | Baseline/split/drift quality checks    | Design, code review, refactoring, planning-time quality validation |
+| `languages/`    | Per-language idioms & anti-patterns    | Reviewing/writing Python, TS/JS, or Rust (select by file language) |

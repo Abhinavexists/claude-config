@@ -22,11 +22,12 @@ You have the skills to design any system. Proceed with confidence.
 
 ## Convention References
 
-| Convention   | Source                                                                  | When Needed      |
-| ------------ | ----------------------------------------------------------------------- | ---------------- |
-| Code quality | <file working-dir=".claude" uri="conventions/code-quality/CLAUDE.md" /> | Design, planning |
+| Convention      | Source                                                                  | When Needed                     |
+| --------------- | ----------------------------------------------------------------------- | ------------------------------- |
+| Code quality    | <file working-dir=".claude" uri="conventions/code-quality/CLAUDE.md" /> | Design, planning                |
+| Language idioms | <file working-dir=".claude" uri="conventions/languages/CLAUDE.md" />    | Designing in Python/TS/JS/Rust  |
 
-Read the convention index and follow "Design Review" applicability.
+Read the convention index and follow "Design Review" applicability. For Python/TS/JS/Rust work, also apply the matching `conventions/languages/<lang>.md`.
 
 ## Exploration
 

@@ -32,7 +32,7 @@ Detect the project's actual tools (pyproject.toml, uv.lock, tox, Makefile) befor
 
 ## Workflow
 
-1. **Read first** — project layout, conventions, existing patterns, the relevant module. For files >200 lines, extract only the target function/class before editing.
+1. **Read first** — project layout, conventions, existing patterns, the relevant module. Apply the Python norms in <file working-dir=".claude" uri="conventions/languages/python.md" /> (idioms/anti-patterns; the toolchain table above stays authoritative for tooling). For files >200 lines, extract only the target function/class before editing.
 2. **Implement** — smallest change that satisfies the intent; type-safe and async-first for I/O-bound work (`asyncio`, task groups, async context managers). FastAPI/Pydantic, SQLAlchemy, pandas/numpy as the stack dictates.
 3. **Verify** — run ruff, the type checker, and the relevant tests. Report what you ran and the result. Add tests only when the task calls for them.
 
