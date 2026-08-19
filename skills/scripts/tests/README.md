@@ -1,5 +1,15 @@
 # Workflow Test Framework
 
+## Status
+
+The pytest-integrated exhaustive runner (`test_workflow_steps.py`) was **retired**:
+it depended on per-step parameter metadata (`Workflow._params`) that no longer
+exists after the Workflow model was simplified (see `../skills/lib/workflow/core.py`).
+The domain types (`BoundedInt`/`ChoiceSet`/`Constant`) and the schema/generation
+helpers in `test_generation.py` remain — unit-tested and reusable — should per-step
+param introspection be reintroduced. The sections below describe that original
+design.
+
 ## Overview
 
 Data-driven test framework that exhaustively tests all steps of all workflow-based skills with all valid parameter combinations. Uses typed domain abstractions (BoundedInt, ChoiceSet, Constant) to represent parameter spaces, extracts schemas from Workflow ASTs, generates Cartesian products of valid inputs, and integrates with pytest via parametrize.

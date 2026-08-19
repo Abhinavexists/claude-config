@@ -32,6 +32,10 @@ def discover_workflows(package: str) -> dict[str, "Workflow"]:
     workflows = {}
     errors = []
 
+    # Runtime import (not just TYPE_CHECKING): needed for the isinstance guard
+    # below. Safe from circular imports — core.py does not import discovery.
+    from .core import Workflow
+
     # Import the package to get its path
     try:
         pkg = importlib.import_module(package)
@@ -52,8 +56,11 @@ def discover_workflows(package: str) -> dict[str, "Workflow"]:
         # Try to import and extract WORKFLOW constant
         try:
             module = importlib.import_module(modname)
-            if hasattr(module, "WORKFLOW"):
-                workflow = module.WORKFLOW
+            workflow = getattr(module, "WORKFLOW", None)
+            # Only register genuine Workflow instances. A module may expose an
+            # unrelated WORKFLOW attribute (e.g. a string family marker); those
+            # must be skipped, not treated as workflows.
+            if isinstance(workflow, Workflow):
                 # Set _module_path if not already set (frozen dataclass bypass)
                 if workflow._module_path is None:
                     object.__setattr__(workflow, "_module_path", modname)

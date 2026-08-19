@@ -19,13 +19,18 @@ def extract_convention_calls(script_path: Path) -> list[tuple[str, int]]:
 
 
 def infer_role_from_path(script_path: Path) -> str:
-    """Infer AgentRole from script location."""
+    """Infer AgentRole from the planner subdirectory the script lives in.
+
+    Matches the actual role directory names (planner/developer, planner/
+    technical_writer, planner/quality_reviewer, refactor). Path components are
+    matched exactly, so these must be the real directory names.
+    """
     parts = script_path.parts
-    if "qr" in parts:
+    if "quality_reviewer" in parts:
         return "quality_reviewer"
-    elif "dev" in parts:
+    elif "developer" in parts:
         return "developer"
-    elif "tw" in parts:
+    elif "technical_writer" in parts:
         return "technical_writer"
     elif "refactor" in parts:
         return "refactor"
