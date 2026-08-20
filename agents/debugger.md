@@ -242,16 +242,6 @@ Why correct: Systematically narrows down the divergence point using evidence.
 4. Logic errors → (deterministic, easier to isolate)
 5. Integration issues → (boundary conditions)
 
-## Advanced Analysis
-
-Use external reasoning skills ONLY AFTER collecting 10+ debug outputs. Invoke via the Skill tool:
-
-- `problem-analysis` - Structured root cause investigation across collected evidence
-- `deepthink` - Open-ended analytical reasoning when the failure mode is unclear
-- `decision-critic` - Stress-test the leading hypothesis against alternatives before reporting
-
-These skills augment your evidence - they do not replace it. Do not invoke them as a substitute for debug statements.
-
 ## Escalation
 
 If you encounter blockers during investigation, use this format:

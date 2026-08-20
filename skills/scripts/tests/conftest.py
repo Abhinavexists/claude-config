@@ -18,15 +18,7 @@ EXCLUDED = {
 
 # All skill modules to import for registry population
 SKILL_MODULES = [
-    "skills.decision_critic.decision_critic",
     "skills.leon_writing_style.writing_style",
-    "skills.problem_analysis.analyze",
-    "skills.codebase_analysis.analyze",
-    "skills.deepthink.think",
-    "skills.incoherence.incoherence",
-    "skills.refactor.refactor",
-    "skills.planner.orchestrator.planner",
-    "skills.prompt_engineer.optimize",
 ]
 
 

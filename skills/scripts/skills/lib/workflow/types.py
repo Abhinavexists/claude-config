@@ -49,11 +49,8 @@ class AgentRole(Enum):
     """Agent types for sub-agent dispatch."""
 
     QUALITY_REVIEWER = "quality-reviewer"
-    DEVELOPER = "developer"
-    TECHNICAL_WRITER = "technical-writer"
     EXPLORE = "explore"
     GENERAL_PURPOSE = "general-purpose"
-    ARCHITECT = "architect"
 
 
 class Confidence(Enum):

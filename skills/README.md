@@ -263,6 +263,10 @@ Rules:
 
 No "action factories". No inversion of control. Just strings.
 
+> Note: the example skills below (deepthink, codebase-analysis, planner,
+> prompt-engineer) were removed in a usage-based prune; they remain here only to
+> illustrate the step patterns. `arxiv-to-md` is the live reference implementation.
+
 ### Pattern 1: Static Steps (deepthink subagent)
 
 All-static workflows use separate `STEP_TITLES` and `STEP_INSTRUCTIONS` dicts:

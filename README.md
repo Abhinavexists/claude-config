@@ -107,37 +107,15 @@ structured around a simple workflow:
 4. Clear context when the plan contains the needed details.
 5. Execute the plan in reviewed milestones.
 
-Example prompts:
-
-```text
-Use your codebase-analysis skill to explore this repository and summarize the
-parts relevant to authentication.
-```
-
-```text
-Use your deepthink skill to compare the implementation options for this change.
-```
-
-```text
-Use your planner skill to write a plan to plans/my-feature.md.
-```
-
-```text
-Use your planner skill to execute plans/my-feature.md.
-```
+For larger changes, use the built-in `/plan` mode to explore and write a plan
+before editing, then execute in reviewed steps.
 
 ## Included Skills
 
-- `planner`: plan and execute larger changes through reviewed milestones
-- `deepthink`: analyze ambiguous design, tradeoff, or strategy questions
-- `codebase-analysis`: explore unfamiliar codebases and surfaces
-- `problem-analysis`: investigate root causes
-- `decision-critic`: stress-test a specific decision
-- `refactor`: identify structural cleanup opportunities
-- `prompt-engineer`: improve prompts and agent instructions
-- `doc-sync`: audit and update Claude-oriented documentation
-- `arxiv-to-md`, `cc-history`, `handoff`, `commit`, and `pr`: supporting
-  workflow utilities
+- `arxiv-to-md`: convert arXiv papers to LLM-readable markdown
+- `cc-history`: analyze Claude Code conversation history and token usage
+- `handoff`: write a session-resume note before `/clear`
+- `docx`, `pdf`, `pptx`, `xlsx`: read and produce Office/PDF documents
 
 Most skill directories include their own `README.md` or `SKILL.md` with more
 detail.
