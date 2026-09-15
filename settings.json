@@ -142,7 +142,6 @@
     ],
     "defaultMode": "default"
   },
-  "model": "claude-opus-4-8",
   "skillOverrides": {
     "docx": "name-only",
     "pptx": "name-only",
@@ -187,5 +186,10 @@
   "effortLevel": "high",
   "advisorModel": "opus",
   "autoUpdatesChannel": "stable",
-  "autoMemoryEnabled": true
+  "autoMemoryEnabled": true,
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "xhigh"
+    }
+  }
 }
