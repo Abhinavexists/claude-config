@@ -3,7 +3,8 @@
   "cleanupPeriodDays": 14,
   "env": {
     "BASH_DEFAULT_TIMEOUT_MS": "300000",
-    "BASH_MAX_TIMEOUT_MS": "900000"
+    "BASH_MAX_TIMEOUT_MS": "900000",
+    "USE_BUILTIN_RIPGREP": "0"
   },
   "includeCoAuthoredBy": false,
   "permissions": {
@@ -173,6 +174,7 @@
       }
     ]
   },
+  "bashOutputMaxChars": 8000,
   "statusLine": {
     "type": "command",
     "command": "bash -lc 'exec \"$HOME/.claude/scripts/statusline.sh\"'",
@@ -181,15 +183,28 @@
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "pr-review-toolkit@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "huggingface-skills@claude-plugins-official": true,
+    "session-report@claude-plugins-official": true,
+    "pydantic-ai@claude-plugins-official": true,
     "github@claude-plugins-official": true
   },
   "effortLevel": "high",
-  "advisorModel": "opus",
-  "autoUpdatesChannel": "stable",
-  "autoMemoryEnabled": true,
   "modelSettings": {
     "claude-fable-5-1": {
       "effortLevel": "xhigh"
     }
-  }
+  },
+  "advisorModel": "opus",
+  "autoUpdatesChannel": "stable",
+  "autoMemoryEnabled": true
 }
