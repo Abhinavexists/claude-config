@@ -198,7 +198,7 @@
     "pydantic-ai@claude-plugins-official": true,
     "github@claude-plugins-official": true
   },
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "modelSettings": {
     "claude-fable-5-1": {
       "effortLevel": "xhigh"
