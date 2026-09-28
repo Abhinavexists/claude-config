@@ -205,6 +205,6 @@
     }
   },
   "advisorModel": "opus",
-  "autoUpdatesChannel": "stable",
+  "autoUpdatesChannel": "latest",
   "autoMemoryEnabled": true
 }
