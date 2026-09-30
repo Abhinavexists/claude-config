@@ -10,6 +10,16 @@ instruction overrides them.
   `--amend` too.
 - Write a single-line commit subject only. Do not add a body/description unless
   I explicitly ask for one.
+- Every commit subject AND every PR title uses semantic commit format:
+  `<type>(<scope>): <subject>` — scope optional, subject lowercase, present tense,
+  no trailing period (e.g. `fix(ocr): stop retrying permanent 4xx errors`).
+  Types: `feat` (user-facing feature), `fix` (user-facing bug fix), `docs`
+  (documentation and code comments only), `style` (formatting, no logic change),
+  `refactor` (production code change with no new feature or fix, incl. removing
+  dead code), `test` (tests only), `chore` (build, deps, tooling, config; no
+  production code). One type per commit: if a change spans types, split it into
+  separate commits rather than picking one type for all of it. This applies to
+  every subject I propose, not just the ones I commit.
 - Whenever you finish a set of changes, propose the commit subject alongside the
   summary, without being asked — so I can sanity-check it against the diff before
   I commit. Describe what the change ends up doing, not the route taken to get
@@ -27,12 +37,9 @@ instruction overrides them.
   merging — this covers `gh pr merge`, the GitHub MCP merge tools, and any
   `--auto`/auto-merge flag.
 
-## Review before handing off
-- For any change beyond a trivial/mechanical edit, run a **fresh-context** review
-  (quality-reviewer subagent or `/code-review`) before telling me the work is ready,
-  and fix what it finds. Reviewing my own work in the context that produced it
-  reliably misses things — the reviewer only helps if it has its own context.
-- Report what it found, including anything you disagreed with and why.
+## Before handing off
+- Don't run a review pass (`/code-review`, quality-reviewer subagent, etc.) unless I
+  ask for one.
 - Three checks that apply whatever the stack:
   - **Move the dependents too.** Anything that stores, mirrors or replays the old
     behaviour — caches, migrations, fixtures, snapshots, generated files, docs —
