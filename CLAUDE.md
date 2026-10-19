@@ -3,6 +3,16 @@
 Apply these in every repository unless a project's own CLAUDE.md or an explicit
 instruction overrides them.
 
+## Starting a task
+- When I give you a new non-trivial task (not a quick question, a mechanical edit,
+  or a follow-up within a task already under way), do this before any work: I want
+  a deeper version of this task, not a bigger one. Before rewriting it: (1) say what
+  a top professional in this field would do here that I'm not asking for; (2) name
+  the rawest material they would start from instead of what has already been
+  digested for me; (3) name the specific methods and tools they would use; (4) say
+  what, other than you or me, would show the result is right. Then rewrite my prompt
+  to ask for exactly that, and wait for me to confirm or edit it before starting.
+
 ## Commits
 - Never run `git commit` until I explicitly ask for it. Finish the work, leave it
   in the working tree, and tell me it's ready for review — do not commit it
