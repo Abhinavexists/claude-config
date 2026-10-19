@@ -49,6 +49,26 @@ instruction overrides them.
   - **Verify, don't reason.** Run it, probe it, measure it. "It should work" is not a
     check, and neither is a passing test that doesn't exercise the change.
 
+## Comments
+- **One line is the unit.** A comment is one line; a docstring is one line. Multi-line is
+  earned, not default — a module docstring's two or three lines of orientation, or a
+  signature whose tensor shapes or wire format need them. A second paragraph on a function
+  means the facts belong in a design doc with a pointer from the code.
+- **Don't write what the code says.** The test is whether a reader has to stop and check the
+  prose against the implementation to confirm they agree. That manual check is the cost —
+  it's why a redundant comment is worse than no comment, not merely useless.
+- **Compress before deleting.** When a buried fact is real, collapse it to its load-bearing
+  line rather than dropping it; a block comment above a statement usually becomes a short
+  trailing comment on the statement itself.
+- **Point, don't restate.** Reference the ADR, doc, named function or constant that already
+  holds the fact. A fact the code states plainly — a guard that raises, an error message that
+  computes its own limit — needs no prose, including real behavioural contracts.
+- **Exception: surface consumed from outside.** For a published package, plugin interface or
+  wire contract the caller reads the signature and docs, never the body, so document the
+  contract, parameters, returns, exceptions and constraints there.
+- Don't rewrite comments for style — voice, capitalisation and punctuation are not defects.
+  When changing code, drop comments the change made obsolete; don't do unrelated cleanup.
+
 ## On-demand cleanup passes
-- `/clean-comments` — repo-wide comment & documentation signal-to-noise cleanup.
+- `/clean-comments` — repo-wide sweep applying the Comments rules above to existing code.
 - `/readability` — repo-wide readability & maintainability improvement.
