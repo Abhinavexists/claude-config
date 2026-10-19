@@ -198,6 +198,14 @@
     "pydantic-ai@claude-plugins-official": true,
     "github@claude-plugins-official": true
   },
+  "extraKnownMarketplaces": {
+    "vibe-wise": {
+      "source": {
+        "source": "github",
+        "repo": "nykooi1/vibe-wise"
+      }
+    }
+  },
   "effortLevel": "xhigh",
   "modelSettings": {
     "claude-fable-5-1": {
