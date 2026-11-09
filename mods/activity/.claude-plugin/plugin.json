@@ -1,0 +1,6 @@
+{
+  "name": "activity",
+  "version": "0.1.0",
+  "description": "Live pane of every tool call: state, elapsed time, output, copy and stop",
+  "types": "./types/index.d.ts"
+}
