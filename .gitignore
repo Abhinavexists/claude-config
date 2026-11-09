@@ -16,6 +16,8 @@
 !output-styles/**
 !scripts/
 !scripts/**
+!mods/
+!mods/**
 
 # Track root files
 !README.md

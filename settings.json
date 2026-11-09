@@ -4,6 +4,7 @@
   "env": {
     "BASH_DEFAULT_TIMEOUT_MS": "300000",
     "BASH_MAX_TIMEOUT_MS": "900000",
+    "CLAUDE_CODE_PLUGIN_DIRS": "~/.claude/mods/activity",
     "USE_BUILTIN_RIPGREP": "0"
   },
   "includeCoAuthoredBy": false,
