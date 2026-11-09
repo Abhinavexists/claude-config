@@ -183,26 +183,33 @@
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
-    "vercel@claude-plugins-official": true,
+    "vercel@claude-plugins-official": false,
     "security-guidance@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "pr-review-toolkit@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "huggingface-skills@claude-plugins-official": true,
     "session-report@claude-plugins-official": true,
-    "pydantic-ai@claude-plugins-official": true,
-    "github@claude-plugins-official": true
+    "github@claude-plugins-official": true,
+    "llm-application-dev@claude-code-workflows": true,
+    "llm-finetuning@claude-code-workflows": true,
+    "machine-learning-ops@claude-code-workflows": true,
+    "security-scanning@claude-code-workflows": true
   },
   "extraKnownMarketplaces": {
     "vibe-wise": {
       "source": {
         "source": "github",
         "repo": "nykooi1/vibe-wise"
+      }
+    },
+    "claude-code-workflows": {
+      "source": {
+        "source": "github",
+        "repo": "wshobson/agents"
       }
     }
   },
@@ -217,5 +224,7 @@
   },
   "advisorModel": "opus",
   "autoUpdatesChannel": "latest",
-  "autoMemoryEnabled": true
+  "autoMemoryEnabled": true,
+  "switchModelsOnFlag": true,
+  "skillListingBudgetFraction": 0.015
 }

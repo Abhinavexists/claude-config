@@ -4,6 +4,7 @@ Apply these in every repository unless a project's own CLAUDE.md or an explicit
 instruction overrides them.
 
 ## Starting a task
+
 - When I give you a new non-trivial task (not a quick question, a mechanical edit,
   or a follow-up within a task already under way), do this before any work: I want
   a deeper version of this task, not a bigger one. Before rewriting it: (1) say what
@@ -14,6 +15,7 @@ instruction overrides them.
   to ask for exactly that, and wait for me to confirm or edit it before starting.
 
 ## Commits
+
 - Never run `git commit` until I explicitly ask for it. Finish the work, leave it
   in the working tree, and tell me it's ready for review — do not commit it
   "to be safe", to checkpoint, or as the natural end of a task. This covers
@@ -38,16 +40,19 @@ instruction overrides them.
   subject per commit rather than a single subject covering all of them.
 
 ## Editing code
+
 - Keep every diff minimal. Change only what the task requires — no incidental
   reformatting, reordering, renaming, or "while I'm here" edits. The diff should
   contain exactly the intended change and nothing more.
 
 ## Pull requests
+
 - Never merge a PR automatically. Always get my explicit confirmation before
   merging — this covers `gh pr merge`, the GitHub MCP merge tools, and any
   `--auto`/auto-merge flag.
 
 ## Before handing off
+
 - Don't run a review pass (`/code-review`, quality-reviewer subagent, etc.) unless I
   ask for one.
 - Three checks that apply whatever the stack:
@@ -60,6 +65,7 @@ instruction overrides them.
     check, and neither is a passing test that doesn't exercise the change.
 
 ## Comments
+
 - **One line is the unit.** A comment is one line; a docstring is one line. Multi-line is
   earned, not default — a module docstring's two or three lines of orientation, or a
   signature whose tensor shapes or wire format need them. A second paragraph on a function
@@ -73,6 +79,10 @@ instruction overrides them.
 - **Point, don't restate.** Reference the ADR, doc, named function or constant that already
   holds the fact. A fact the code states plainly — a guard that raises, an error message that
   computes its own limit — needs no prose, including real behavioural contracts.
+- **Python: comments over docstrings.** Explain internal code with `#` comments; write a
+  docstring only where it is public reference — a published package's API, a plugin
+  interface, a module other code imports, or a script's usage text (`argparse` reads
+  `__doc__`). Private helpers, methods and nested functions get a comment, or nothing.
 - **Exception: surface consumed from outside.** For a published package, plugin interface or
   wire contract the caller reads the signature and docs, never the body, so document the
   contract, parameters, returns, exceptions and constraints there.
@@ -80,5 +90,6 @@ instruction overrides them.
   When changing code, drop comments the change made obsolete; don't do unrelated cleanup.
 
 ## On-demand cleanup passes
+
 - `/clean-comments` — repo-wide sweep applying the Comments rules above to existing code.
 - `/readability` — repo-wide readability & maintainability improvement.
